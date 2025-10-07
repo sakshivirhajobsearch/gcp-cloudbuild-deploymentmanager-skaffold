@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.gcp.cloudbuild.deploymentmanager.skaffold</groupId>
+	<artifactId>gcp-cloudbuild-deploymentmanager-skaffold</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<!-- ✅ Parent manages all Spring Boot versions -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.4</version>
+		<relativePath /> <!-- Lookup parent from the central repository -->
+	</parent>
+
+	<properties>
+		<java.version>17</java.version> <!-- Or 21 if using Java 21 -->
+	</properties>
+
+	<dependencies>
+		<!-- ✅ No need to define version -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- ✅ Version is auto-managed -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

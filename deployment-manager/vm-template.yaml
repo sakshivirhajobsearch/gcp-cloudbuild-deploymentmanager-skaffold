@@ -1,0 +1,12 @@
+apiVersion: skaffold/v4beta6
+kind: Config
+build:
+  artifacts:
+    - image: gcr.io/your-project-id/demo-app
+      jib: {}
+  tagPolicy:
+    sha256: {}
+deploy:
+  kubectl:
+    manifests:
+      - kubernetes/deployment.yaml
